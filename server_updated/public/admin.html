@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous">
+
+    <title>Admin</title>
+</head>
+
+<body>
+<div class = "admin_body">
+    <div class="WoWText">Admin Panel</div>
+    <div class = "loadText">Upload File : </div>
+    <div class = "load">
+    <form action="/upload" method="post" encType="multipart/form-data">
+        <input name="files" type="file" />
+        <input type="submit" value="send"font id ="sendBtn">
+    </form>
+    </div>
+	<div class = "loadFiles">Download file from server: </div>
+    <div class = "item">
+    <iframe src="/getFileList" frameborder="0" style = "border: solid;"></iframe>
+    </div>
+    <div class = "console">
+    <div id="cmdOut"> </div>
+    </div>
+    <br>
+    <div class = "send">
+    <input id="cmd" type="text" placeholder = "Enter your command"><button onclick="sendCmd(this)"> send</button>
+    </div>
+
+    <script>
+        function POST(theUrl, formData,callback) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("POST", theUrl, true); // true for asynchronous 
+            xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                    callback(xmlHttp.responseText);
+            }
+            
+            xmlHttp.send(formData);
+        }
+
+        function sendCmd(bt){
+            bt.disabled = true
+            var cmd = document.getElementById('cmd');
+            var cmdOut = document.getElementById('cmdOut')
+            var fd = 'cmd='+encodeURIComponent(cmd.value)
+            POST('/cmd',fd,(text)=>{
+                cmdOut.innerText+=text;
+                cmdOut.scrollTo(0,cmdOut.scrollHeight);
+                bt.disabled = false
+            })
+        }
+    </script>
+</div>
+<div class = "homeBtn"> 
+<a href="index.html"><button type="button" class="btn btn-light">Home</button></a>
+</div>
+
+</body>
+
+</html>

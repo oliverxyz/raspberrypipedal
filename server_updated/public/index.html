@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous">
+    <title>Control Panel</title>
+</head>
+
+<body>
+    <div class = "WoWText">Guitar Improver</div>
+        <div class="btn-group" 
+        style="display: flex;
+            margin-top: 50px;
+            justify-content: space-around;">
+
+        <form>
+
+            <button type="button" class="btn btn-warning" Value="overdrive" onclick="setOverdrive();showHide('1')" >Overdrive</button>
+            <button type="button" class="btn btn-secondary" value="octaver" onclick="setOctaver();showHide('2')" >Octaver</button>
+            <button type="button" class="btn btn-success" value="delay" onclick="setDelay();showHide('3')" >Delay</button>
+            <button type="button" class="btn btn-dark" value="reverb" onclick="setReverb();showHide('4')" >Reverb</button>
+            <button type="button" class="btn btn-info" value="echo" onclick="setEcho();showHide('5')" >Echo</button>
+            <button type="button" class="btn btn-danger" value="fuzz" onclick="setFuzz();showHide('6')" >Fuzz</button>
+
+        </form>
+    </div>
+
+
+<script type="text/javascript">
+
+    var oldSel=null;
+    /**
+    * Функция Скрывает/Показывает блок 
+    **/
+    function showHide(element_id) {
+        //Если элемент с id-шником element_id существует
+        if (document.getElementById(element_id)) { 
+            //Записываем ссылку на элемент в переменную obj
+            var obj = document.getElementById(element_id); 
+            //Если css-свойство display не block, то: 
+            if (obj.style.display != "block") { 
+if(oldSel)
+oldSel.style.display = "none";
+                obj.style.display = "block"; //Показываем элемент
+oldSel = obj
+            }
+            else {
+	obj.style.display = "none"; //Скрываем элемент
+oldSel=null;
+	}
+        }
+        //Если элемент с id-шником element_id не найден, то выводим сообщение
+        else alert("Элемент с id: " + element_id + " не найден!"); 
+    }   
+</script>
+
+<div class = "conteinerBox">
+
+    <div id="1" style="display: none;">
+            
+             <div class="Overdrive" >Overdrive <br/><br/>
+                <label for="Overdrive1" class="form-label">Drive</label>
+                <input onchange="setOverdrive()" type="range" class="form-range" min="0" max="100" id="Overdrive1">
+                <label for="Overdrive2" class="form-label">Level</label>
+                <input onchange="setOverdrive()" type="range" class="form-range" min="0" max="100" id="Overdrive2">
+             </div>
+            
+    </div>
+    
+        
+    <div id="2" style="display: none;">
+            
+        <div class="Octaver" >Octaver<br/><br/>
+            <label for="Octaver1" class="form-label">Level</label>
+            <input onchange="setOctaver()" type="range" class="form-range" min="0" max="20" id="Octaver1">
+            <label for="Octaver2" class="form-label">Octave</label>
+            <input onchange="setOctaver()" type="range" class="form-range" min="0" max="2" id="Octaver2">
+         </div>
+            
+    </div>
+           
+    <div id="3" style="display: none;">
+           
+        <div class="Delay" >Delay <br/><br/>
+            <label for="Delay1" class="form-label">Level</label>
+            <input onchange="setDelay()" type="range" class="form-range" min="0" max="20" id="Delay1">
+            <label for="Delay2" class="form-label">Delay</label>
+            <input onchange="setDelay()" type="range" class="form-range" min="0" max="50" id="Delay2">
+         </div>
+           
+    </div>
+           
+    <div id="4" style="display: none;">
+           
+        <div class="Reverb" >Reverb <br/><br/>
+            <label for="Reverb1" class="form-label">Level</label>
+            <input onchange="setReverb()" type="range" class="form-range" min="0" max="20" id="Reverb1">
+            <label for="Reverb2" class="form-label">Time</label>
+            <input onchange="setReverb()" type="range" class="form-range" min="0" max="20" id="Reverb2">
+         </div>
+            
+    </div>
+
+    <div id="5" style="display: none;">
+           
+        <div class="Echo">Echo <br/><br/>
+            <label for="Echo1" class="form-label">Level</label>
+            <input onchange="setEcho()" type="range" class="form-range" min="0" max="20" id="Echo1">
+            <label for="Echo2" class="form-label">Time</label>
+            <input onchange="setEcho()" type="range" class="form-range" min="0" max="20" id="Echo2">
+         </div>
+            
+    </div>
+
+    <div id="6" style="display: none;">
+           
+        <div class="Fuzz">Fuzz<br/><br/>
+            <label for="Fuzz1" class="form-label">Level</label>
+            <input onchange="setFuzz()" type="range" class="form-range" min="0" max="20" id="Fuzz1">
+            <label for="Fuzz2" class="form-label">Fuzz</label>
+            <input onchange="setFuzz()" type="range" class="form-range" min="0" max="20" id="Fuzz2">
+         </div>
+            
+    </div>
+
+
+    
+</div>
+ 
+    </body>
+</html>
+<div class = "adminBtn"> 
+<a href="admin.html"><button type="button" class="btn btn-light">Admin</button></a>
+</div>
+ 
+    <script src="js.js">
+    </script>
+
+</body>
+
+</html>
+

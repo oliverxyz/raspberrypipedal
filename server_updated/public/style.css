@@ -1,0 +1,274 @@
+@font-face {
+    font-family: "Lobster"; 
+    src: url("/fonts/Death.ttf"); 
+    }
+.btn {
+    width: 200px;
+    background-color: #ffa164;
+    border: 1.5px solid black;
+    border-radius: 0.25rem;
+}
+
+.form-range {
+    width: 200px;
+    height: 1.5rem;
+    padding: 0;
+    background-color: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.loadText {
+    margin-top: 20px;
+ 	display: flex;
+    justify-content: center;
+	color: red;
+    font-size: 22px;
+    font-family: inherit;
+}
+.conteinerBox {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+.command {
+    font-size: 22px;
+    font-family: inherit;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.load {
+    color: red;
+    font-size: 20px;
+    font-family: inherit;
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+}
+.Overdrive {
+    color: #000;
+    background-color: #ffc107;
+    border-color: #ffc107;
+    border-radius: 0.25rem;
+    height: 300px;
+    width: 200px;
+    font-size: 22px;
+    padding-top: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+.Octaver {
+    color: #fff;
+    background-color: #5c636a;;
+    border-color: #5c636a;;
+    border-radius: 0.25rem;
+    height: 300px;
+    width: 200px;
+    font-size: 22px;
+    padding-top: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+
+.Delay {
+    color: #fff;
+    background-color: #198754;
+    border-color: #198754;
+    border-radius: 0.25rem;
+    height: 300px;
+    width: 200px;
+    font-size: 22px;
+    padding-top: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+.WoWText {
+    font-size: 50px;
+    text-align: center;
+    color:red;
+    font-family:'Lobster';
+}
+.Reverb {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+    border-radius: 0.25rem;
+    height: 300px;
+    width: 200px;
+    font-size: 22px;
+    padding-top: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+
+.Echo {
+    color: #000;
+    background-color: #0dcaf0;
+    border-color: #0dcaf0;
+    border-radius: 0.25rem;
+    height: 300px;
+    width: 200px;
+    font-size: 22px;
+    padding-top: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+.send {
+    display: flex;
+    justify-content: center;
+   
+}
+input#cmd{
+    background-color: #000;
+    color: #fff;
+    min-width: 250px;
+    
+}
+.console{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+div#cmdOut {
+	background-color: #000;
+	color: #49e949;
+	border: solid;
+	border-color: #000;
+	font-size: 12px;
+	min-height: 150px;
+        max-height: 150px;
+        overflow-y: scroll;
+        max-width: 300px;
+	min-width: 300px;
+        justify-content: center;
+}
+.item { text-decoration: none;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+.adminBtn {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.homeBtn {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.btn-light {
+border: solid;
+border-color: #000 !important;
+border-width: 2px !important;
+
+}
+.Fuzz {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0.25rem;
+    height: 300px;
+    width: 200px;
+    font-size: 22px;
+    padding-top: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+
+
+
+form#loginForm {
+            display: flex;
+            flex-direction: column;
+        
+}
+
+.input-field {
+            position: relative;
+            margin-top: 2rem;
+}
+
+.input-field input {
+            padding: 0.8rem;
+}
+.loadFiles{
+	margin-top: 50px;
+ 	display: flex;
+        justify-content: center;
+	color: red;
+        font-size: 22px;
+        font-family: inherit;
+}
+
+
+form .input-field:first-child {
+            margin-bottom: 1.5rem;
+}
+
+form input[type="submit"] {
+    background: #f8f9fa;
+    color: black;
+    border-radius: 4px;
+    margin-top: 2rem;
+    padding: 0.4rem;
+}
+form input[type="file"] {
+    max-width: 380px;
+	border: solid;
+    background: black;
+    color: white;
+    padding: 3px;
+}
+.loginPage {
+	display: flex;
+	justify-content: center;
+}
+
+input#sendBtn {
+    padding: 4px;
+    max-height: 50px;
+}

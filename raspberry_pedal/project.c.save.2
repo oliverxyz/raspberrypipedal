@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <wiringPi.h>
+#include <softTone.h>
+
+int main(void) {
+	wiringPiSetup();
+	pinMode (26, PWM_OUTPUT);9
+
+	for(;;){
+		softToneCreate(2);
+		softToneWrite(2, 220);	
+	}
+	return 0;
+}
